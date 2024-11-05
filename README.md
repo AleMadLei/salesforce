@@ -2,10 +2,10 @@ Salesforce Integration
 ======================
 
 This module suite implements a mapping functionality between Salesforce
-objects and Drupal entities. In other words, for each of your supported Drupal
+objects and Backdrop entities. In other words, for each of your supported Backdrop
 entities (e.g. node, user, or entities supported by extensions), you can
 assign Salesforce objects that will be created / updated when the entity is
-saved. For each such assignment, you choose which Drupal and Salesforce fields
+saved. For each such assignment, you choose which Backdrop and Salesforce fields
 should be mapped to one another.
 
 This suite also includes an API architecture which allows for additional
@@ -52,13 +52,13 @@ Salesforce (salesforce):
   OAUTH2 authorization and wrapper around the Salesforce REST API.
 
 Salesforce Mapping (salesforce_mapping)
-  Map Drupal entities to Salesforce fields, including field level mapping.
+  Map Backdrop entities to Salesforce fields, including field level mapping.
 
 Salesforce Push (salesforce_push):
-  Push Drupal entity updates into Salesforce.
+  Push Backdrop entity updates into Salesforce.
 
 Salesforce Pull (salesforce_pull):
-  Pull Salesforce object updates into Drupal.
+  Pull Salesforce object updates into Backdrop.
 
 Salesforce Soap (salesforce_soap):
   Lightweight wrapper around the SOAP API, using the OAUTH access token, to
@@ -73,7 +73,7 @@ Addressfield Options
   easier to sync addressfield data to Salesforce multi-line addressfields.
 
 Dates
-  For Drupal date fields with start and end dates, salesforce_pull will fail
+  For Backdrop date fields with start and end dates, salesforce_pull will fail
   unless you are using a version of Date that includes commit 7faeea3.
 
     To avoid potential timezone conversion errors, try setting your date field
@@ -91,6 +91,8 @@ Installation
 - Install any of the other modules if needed to pull from and push data to
 Salesforce.
 
+- If your site is under version control, consider adding `config/staging/salesforce.auth_settings.json` to your `.gitignore` file to ensure sensitive credentials are not committed to the repository.
+
 Issues
 ------
 
@@ -99,18 +101,16 @@ Bugs and feature requests should be reported in [the Issue Queue](https://github
 Current Maintainers
 -------------------
 
-- [Alejandro Madrigal](https://github.com/alemadlei).
 - [Eli Lisseck](https://github.com/elisseck).
--
-- Seeking additional maintainers.
+- [Anthony Nemirovsky](https://github.com/anemirovsky).
 
 Credits
 -------
 
+- Backdrop development supported by [USENIX](https://www.usenix.org/).
+- Backdrop development supported by [Giant Rabbit](https://giantrabbit.com).
 - Originally written for Drupal by [Steve McKenzie](http://drupal.org/user/45890).
-- Ported to Backdrop CMS by [Alejandro Madrigal](https://github.com/alemadlei).
-- Code review and maintainer [Eli Lisseck](https://github.com/elisseck).
-- Supporting organization [Giant Rabbit](https://github.com/giant-rabbit)
+- Ported to Backdrop CMS by [Alejandro Madrigal](https://github.com/alemadlei) & [Eli Lisseck](https://github.com/elisseck).
 
 License
 -------
